@@ -5,5 +5,7 @@ module RubyComplexity
   
   # Adding a couple of extra files here and you can view all of the source
   # to see what they have in them.
+  require 'templates/rcomplexity/rcomplexity_template'
   require 'ruby_complexity/analyser'
+  require 'extensions/metric_fu/flog_bluff_grapher'
 end
