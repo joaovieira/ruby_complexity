@@ -1,1 +1,1 @@
-module RubyComplexity  VERSION = "0.0.2"end
+module RubyComplexity  VERSION = "0.0.3"end
