@@ -8,4 +8,8 @@ module RubyComplexity
   require 'templates/rcomplexity/rcomplexity_template'
   require 'ruby_complexity/analyser'
   require 'extensions/metric_fu/flog_bluff_grapher'
+  
+  NAME = 'Complexity'
+  PROGRAMMING_LANGUAGE = "Ruby"
+  ANALYSER = self.name.split('::').first
 end

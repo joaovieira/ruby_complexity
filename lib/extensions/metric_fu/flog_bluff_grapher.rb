@@ -1,12 +1,13 @@
+require 'metric_fu'
+require 'ruby_complexity'
+
 class MetricFu::FlogBluffGrapher
   def graph!
-    if File.basename(MetricFu.output_directory) == 'ruby_complexity'
+    if File.basename(MetricFu.output_directory) == RubyComplexity::ANALYSER.underscore
       content = <<-EOS
-        var g = new Bluff.Line('Complexity', '420x252');
+        var g = new Bluff.Line('#{RubyComplexity::NAME}', '550x330');
         g.theme_pastel();
         g.tooltips = true;
-        g.legend_font_size = '7px';
-        g.marker_font_size = '4px';
         g.hide_title = 'true';
         g.data('average', [#{@flog_average.join(',')}]);
         g.data('top 5%', [#{@top_five_percent_average.join(',')}])

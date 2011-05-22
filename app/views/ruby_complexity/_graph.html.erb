@@ -1,0 +1,12 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'bluff/syntax', 'bluff/default' %>
+  <%= javascript_include_tag 'js-class', 'bluff-min', 'excanvas' %>
+<% end %>
+
+<div class="graph_results">
+  <h3><%= t('complexity') %></h3>
+  <canvas id="<%= RubyComplexity::NAME %>"></canvas>
+  <script type="text/javascript">
+    <%= File.read(Dir[File.join(dir, RubyComplexity::ANALYSER.underscore, '*.js')].first).html_safe %>
+  </script>
+</div>
