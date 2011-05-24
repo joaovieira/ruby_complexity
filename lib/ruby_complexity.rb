@@ -12,4 +12,5 @@ module RubyComplexity
   NAME = 'Complexity'
   PROGRAMMING_LANGUAGE = "Ruby"
   ANALYSER = self.name.split('::').first
+  OUTPUT_NAME = 'flog'
 end
