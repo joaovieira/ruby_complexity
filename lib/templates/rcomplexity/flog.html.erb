@@ -21,7 +21,7 @@
 </table>
 
 <% @flog[:method_containers].each do |method_container| %>
-  <h3 id="<%= method_container[:path].gsub(/[^a-z]+/, '_') %>"><%= link_to_filename(method_container[:path]) %></h3>
+  <h3 id="<%= method_container[:path].gsub(/[^a-z]+/, '_') %>"><a href=<%= "#{RubyComplexity::NAME.underscore.gsub('_','-')}/#{method_container[:path].gsub(/\//,'_').concat('.html')}" %>><%= method_container[:path] %></a></h3>
 
     <% method_container[:methods].each do |full_method_name, method_info| %>
       <% path, line = method_info[:path].split(":") if method_info[:path] %>
@@ -29,7 +29,7 @@
       <p>Total Score: <%= round_to_tenths method_info[:score]%></p>
       <table class="metrics_table">
         <tr>
-          <th>Score</th>
+          <th class="row_header">Score</th>
           <th>Operator</th>
         </tr>
         <% method_info[:operators].each do |operator, score| %>
